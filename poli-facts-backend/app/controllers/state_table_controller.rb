@@ -1,0 +1,2 @@
+class StateTableController < ApplicationController
+end
