@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+
+import PoliticiansContainer from './PoliticiansContainer'
+import FactsContainer from './FactsContainer'
+import HeaderDisplay from './HeaderDisplay'
+import houseicon from '../imgs/house-icon.png'
+import axios from 'axios';
 import USAMap from "react-usa-map";
+
 
 
 
@@ -44,8 +50,22 @@ class Landing extends Component {
   render() {
     return (
 
-      <div>
-      hello world
+      <div className="ui container">
+        <HeaderDisplay />
+        <h1 className="ui huge header" id="topHeader">PoliFacts </h1>
+        <div id="icon-cont">
+          <img src={houseicon} className ="ui medium centered image" alt="political icon"/><br/><br/>
+          <a href="#divider">
+            <i aria-hidden='true' class='grey angle double down big link icon'/>
+          </a>
+          <a name="divider"/>
+        </div>
+
+
+        <br/> <br/>
+        <div className='ui divider'/>
+         <div>
+     
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Zip"/>
         <button>Search</button>
@@ -53,7 +73,16 @@ class Landing extends Component {
       {this.state.info.length === 0? <USAMap onClick={this.mapHandler} /> : this.state.info}
 
       <div className="ui container"></div>
+
       </div>
+      
+        <div className="ui divided equal width grid container" id="section2">
+          <PoliticiansContainer />
+          <FactsContainer />
+        </div>
+
+
+    
     )
   }
 
