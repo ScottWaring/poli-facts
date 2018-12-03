@@ -1,0 +1,1 @@
+//handles logic for either displaying a list of politician icons or individual politican info 

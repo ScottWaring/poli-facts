@@ -1,0 +1,1 @@
+// handles logic for whether to access facts for a state or a zipcode
