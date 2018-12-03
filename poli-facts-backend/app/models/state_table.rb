@@ -1,0 +1,2 @@
+class StateTable < ApplicationRecord
+end
