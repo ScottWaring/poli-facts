@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import USAMap from "react-usa-map";
 
+
+
 class Landing extends Component {
   state = {
     searchInput: "",
@@ -41,6 +43,7 @@ class Landing extends Component {
 
   render() {
     return (
+
       <div>
       hello world
       <form onSubmit={this.handleSubmit}>
@@ -48,9 +51,13 @@ class Landing extends Component {
         <button>Search</button>
       </form>
       {this.state.info.length === 0? <USAMap onClick={this.mapHandler} /> : this.state.info}
+
+      <div className="ui container"></div>
       </div>
     )
   }
+
+
 }
 
 export default Landing
