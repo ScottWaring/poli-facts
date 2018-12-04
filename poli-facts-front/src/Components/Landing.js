@@ -4,6 +4,7 @@ import FactsContainer from './FactsContainer'
 import houseicon from '../imgs/house-icon.png'
 import axios from 'axios';
 import USAMap from "react-usa-map";
+import GovernorIcon from './GovernorIcon'
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
@@ -16,7 +17,8 @@ class Landing extends Component {
   state = {
     searchInput: "",
     info: [],
-    displayFacts: true
+    displayFacts: false,
+    facts: []
   }
 
   changeHandler =(e)=> {
@@ -25,7 +27,10 @@ class Landing extends Component {
 
   callFetch =(input)=> {
     axios.get(`http://localhost:3000/find_by/${input}`)
-    .then(response => this.setState({info: response.data}))
+    .then(response => {
+      console.log(response.data)
+      this.setState({info: response.data, displayFacts: true})
+    })
     // .catch(r => alert("Bad Value Please Reenter Search Input"))
   }
 
@@ -38,18 +43,18 @@ class Landing extends Component {
     return this.callFetch(joinInput)
   }
 
-  // parseInfo =()=> {
-  //   return (
-  //     <div>
-  //     {this.state.info.income}
-  //     </div>
-  //   )
-  // }
   mapHandler = (event) => {
     let state = event.target.dataset.name
     console.log(state)
-    return this.callFetch(state)
+    this.callFetch(state)
   };
+
+  clickHandler = (event) => {
+    this.setState({
+      facts: event 
+    })
+  }
+
 
   render() {
     return (
@@ -71,10 +76,8 @@ class Landing extends Component {
         </div>
 
 
-
-
         <br/> <br/>
-        <div className='ui divider'/>
+        
          <div>
 
       <form className="ui input" onSubmit={this.handleSubmit}>
@@ -89,9 +92,15 @@ class Landing extends Component {
       </div>
 
         {this.state.displayFacts ?
-          <div className="ui divided equal width grid container fade-in" id="section2">
-            <PoliticiansContainer />
-            <FactsContainer />
+          <div className="ui container fade-in" id="section2">
+            <FactsContainer info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
+            <div className='ui divider'/>
+            <h2 className="ui header">Governor</h2>
+            <div className= "ui centered cards"id ="gov">
+                <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>     
+            </div>
+            <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor} clickHandler={this.clickHandler}/>
+            
           </div>
           :null
         }

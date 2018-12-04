@@ -2401,24 +2401,27 @@ def make_state_tables()
       end
     end
     newState = StateTable.create(name: @name, abbrv: @abbrv, census_id: @census_id, poverty: @poverty)
-    gov = @gov_array.first {|gov| gov["state_code"] == newState.abbrv }
-    govHash = {
-      "state_table_id" => newState.id,
-      "party" => gov[:party],
-      "name"=> gov[:name],
-      "dob"=>gov[:date_of_birth],
-      "entered_office"=> gov[:entered_office],
-      "term_end"=> gov[:term_end],
-      "bio"=> gov[:biography],
-      "phone"=> gov[:phone],
-      "address"=> gov[:address_complete],
-      "website"=> gov[:website],
-      "facebook"=> gov[:facebook_url],
-      "twitter"=> gov[:twitter_url],
-      "twitter_handle"=> gov[:twitter_handle],
-      "photo_url"=> gov[:photo_url]
-    }
-    Governor.create(govHash)
+    gov = @gov_array.select {|gov| gov[:state_code] == newState.abbrv }
+   
+    if gov.length > 0
+      govHash = {
+        "state_table_id" => newState.id,
+        "party" => gov[0][:party],
+        "name"=> gov[0][:name],
+        "dob"=>gov[0][:date_of_birth],
+        "entered_office"=> gov[0][:entered_office],
+        "term_end"=> gov[0][:term_end],
+        "bio"=> gov[0][:biography],
+        "phone"=> gov[0][:phone],
+        "address"=> gov[0][:address_complete],
+        "website"=> gov[0][:website],
+        "facebook"=> gov[0][:facebook_url],
+        "twitter"=> gov[0][:twitter_url],
+        "twitter_handle"=> gov[0][:twitter_handle],
+        "photo_url"=> gov[0][:photo_url]
+      }
+      Governor.create(govHash)
+    end
 
     returnedSenate = senateMembers.select {|member| member["state"] == newState.abbrv}
 

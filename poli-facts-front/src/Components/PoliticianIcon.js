@@ -4,16 +4,16 @@ class PoliticiansIcon extends React.Component {
     
     render(){
         return (
-            <div className="ui red card">
+            <div className={this.props.party=== "Republican" ? "ui red card" : "ui blue card"} onClick={() => this.props.clickHandler(this.props)} >
             <div className="ui small image centered spaced" id="padding">
-                <img src="https://theunitedstates.io/images/congress/225x275/R000570.jpg" alt="politician"/>
+                <img src={this.props.img_url} alt="politician"/>
             </div>
                 <div class='content'>
-                    <div class='header'>Rep Name</div>
+                    <div class='header'>{this.props.name}</div>
                     <div class='meta'>
-                        <span class='date'>Republican</span>
+                        <span class='date'>{this.props.party}</span>
                     </div>
-                    <div class='description'>Texas Senator</div>
+                    <div class='description'>{this.props.title}</div>
                 </div>
             </div>
         )
