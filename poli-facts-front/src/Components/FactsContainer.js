@@ -5,11 +5,15 @@ import React from 'react'
 class FactsContainer extends React.Component {
     
     render(){
+       
         return (
-            <div className="ui column">
+            <div >
+
                 <h2 className="ui header">Key Facts</h2>
                 <div className="ui piled segment">
-                    <p>sup sup</p>
+                    {console.log(this.props)}
+
+                   
                 </div>
                 
             </div>
