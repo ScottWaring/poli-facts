@@ -16,7 +16,7 @@ class Landing extends Component {
   state = {
     searchInput: "",
     info: [],
-    displayFacts: true
+    displayFacts: false
   }
 
   changeHandler =(e)=> {
@@ -25,7 +25,11 @@ class Landing extends Component {
 
   callFetch =(input)=> {
     axios.get(`http://localhost:3000/find_by/${input}`)
-    .then(response => this.setState({info: response.data}))
+    .then(response => {
+      console.log(response.data)
+
+      this.setState({info: response.data, displayFacts: true})
+    })
     // .catch(r => alert("Bad Value Please Reenter Search Input"))
   }
 
@@ -38,17 +42,10 @@ class Landing extends Component {
     return this.callFetch(joinInput)
   }
 
-  // parseInfo =()=> {
-  //   return (
-  //     <div>
-  //     {this.state.info.income}
-  //     </div>
-  //   )
-  // }
   mapHandler = (event) => {
     let state = event.target.dataset.name
     console.log(state)
-    return this.callFetch(state)
+    this.callFetch(state)
   };
 
   render() {
@@ -71,8 +68,6 @@ class Landing extends Component {
         </div>
 
 
-
-
         <br/> <br/>
         <div className='ui divider'/>
          <div>
@@ -90,8 +85,8 @@ class Landing extends Component {
 
         {this.state.displayFacts ?
           <div className="ui divided equal width grid container fade-in" id="section2">
-            <PoliticiansContainer />
-            <FactsContainer />
+            <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor}/>
+            <FactsContainer stateInfo={this.state.info.state} />
           </div>
           :null
         }
