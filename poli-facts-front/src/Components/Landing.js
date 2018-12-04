@@ -99,7 +99,6 @@ class Landing extends Component {
 
     </div>
 
-   
 
 
 

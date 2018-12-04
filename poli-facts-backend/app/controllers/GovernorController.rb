@@ -1,0 +1,2 @@
+class GovernorController < ApplicationController
+end
