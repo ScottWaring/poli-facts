@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-
 import PoliticiansContainer from './PoliticiansContainer'
 import FactsContainer from './FactsContainer'
-import HeaderDisplay from './HeaderDisplay'
 import houseicon from '../imgs/house-icon.png'
 import axios from 'axios';
 import USAMap from "react-usa-map";
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+global.jQuery = $;
 
 
 
@@ -13,7 +15,8 @@ import USAMap from "react-usa-map";
 class Landing extends Component {
   state = {
     searchInput: "",
-    info: []
+    info: [],
+    displayFacts: true
   }
 
   changeHandler =(e)=> {
@@ -44,29 +47,37 @@ class Landing extends Component {
   // }
   mapHandler = (event) => {
     let state = event.target.dataset.name
+    console.log(state)
     return this.callFetch(state)
   };
 
   render() {
     return (
 
-      <div className="ui container">
-        <HeaderDisplay />
+      <div className="ui container fade-in">
+       
         <h1 className="ui huge header" id="topHeader">PoliFacts </h1>
+       
         <div id="icon-cont">
-          <img src={houseicon} className ="ui medium centered image" alt="political icon"/><br/><br/>
+          {/* <svg height="100" width="100">
+            <circle cx="50" cy="50" r="40" />
+          </svg> */}
+          <img src={houseicon} id="icon" className ="ui medium centered image" alt="political icon"/><br/><br/>
           <a href="#divider">
-            <i aria-hidden='true' class='grey angle double down big link icon'/>
+          <br/>
+            <i aria-hidden='true' id="arrow" class='grey angle double down big link icon bounce'/>
           </a>
           <a name="divider"/>
         </div>
+
+      
 
 
         <br/> <br/>
         <div className='ui divider'/>
          <div>
      
-      <form onSubmit={this.handleSubmit}>
+      <form className="ui input" onSubmit={this.handleSubmit}>
         <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Zip"/>
         <button>Search</button>
       </form>
@@ -76,10 +87,16 @@ class Landing extends Component {
 
       </div>
       
-        <div className="ui divided equal width grid container" id="section2">
-          <PoliticiansContainer />
-          <FactsContainer />
-        </div>
+        {this.state.displayFacts ? 
+          <div className="ui divided equal width grid container fade-in" id="section2">
+            <PoliticiansContainer />  
+            <FactsContainer /> 
+          </div>
+          :null
+        }
+        
+
+    </div>
 
 
     

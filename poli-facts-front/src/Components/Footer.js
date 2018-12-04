@@ -2,15 +2,15 @@
 import React from 'react'
 
 
-class FactsCard extends React.Component {
+class Footer extends React.Component {
     
     render(){
         return (
-            <div className="ui piled segment">
-                <p>sup sup</p>
+            <div className="column">
+                <h2 className="ui header">Key Facts</h2>
             </div>
         )
     }
 }
 
-export default FactsCard
+export default Footer
