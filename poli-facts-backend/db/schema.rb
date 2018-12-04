@@ -10,11 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_172913) do
+ActiveRecord::Schema.define(version: 2018_12_04_153944) do
 
   create_table "data_fetches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "poli_bio_infos", force: :cascade do |t|
+    t.string "bioguide_id"
+    t.integer "cspan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "politicians", force: :cascade do |t|
+    t.integer "state_table_id"
+    t.string "name"
+    t.string "party"
+    t.integer "next_elec"
+    t.string "api_uri"
+    t.string "twitter"
+    t.string "facebook"
+    t.string "district"
+    t.string "office_address"
+    t.string "phone"
+    t.integer "bills_sponsored"
+    t.integer "bills_cosponsored"
+    t.float "missed_votes_pct"
+    t.float "votes_with_party_pct"
+    t.integer "cspan_id"
+    t.integer "bioguide_id"
+    t.string "img_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_table_id"], name: "index_politicians_on_state_table_id"
   end
 
   create_table "state_tables", force: :cascade do |t|
