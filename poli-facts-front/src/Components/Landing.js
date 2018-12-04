@@ -23,7 +23,7 @@ class Landing extends Component {
   callFetch =(input)=> {
     axios.get(`http://localhost:3000/find_by/${input}`)
     .then(response => this.setState({info: response.data}))
-    .catch(r => alert("Bad Value Please Reenter Search Input"))
+    // .catch(r => alert("Bad Value Please Reenter Search Input"))
   }
 
   handleSubmit =(e)=> {
@@ -65,24 +65,27 @@ class Landing extends Component {
         <br/> <br/>
         <div className='ui divider'/>
          <div>
-     
+
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Zip"/>
         <button>Search</button>
       </form>
-      {this.state.info.length === 0? <USAMap onClick={this.mapHandler} /> : this.state.info}
+      <USAMap onClick={this.mapHandler} />
+      
 
       <div className="ui container"></div>
 
       </div>
-      
+
         <div className="ui divided equal width grid container" id="section2">
           <PoliticiansContainer />
           <FactsContainer />
         </div>
 
+        </div>
 
-    
+
+
     )
   }
 
