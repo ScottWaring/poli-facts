@@ -1,0 +1,3 @@
+class PoliBioInfo < ApplicationRecord
+   
+end

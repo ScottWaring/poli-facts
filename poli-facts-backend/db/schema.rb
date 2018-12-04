@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_151135) do
+ActiveRecord::Schema.define(version: 2018_12_04_153944) do
 
   create_table "data_fetches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "poli_bio_infos", force: :cascade do |t|
+    t.string "bioguide_id"
+    t.integer "cspan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
