@@ -17,6 +17,10 @@
   }
 } */
 
+#padding {
+  padding: 12px;
+}
+
 .fade-in {
 	opacity: 1;
 	animation-name: fadeInOpacity;
