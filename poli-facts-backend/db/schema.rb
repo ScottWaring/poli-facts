@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_155753) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "governors", force: :cascade do |t|
     t.integer "state_table_id"
     t.string "party"
@@ -50,7 +49,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_155753) do
     t.string "name"
     t.string "party"
     t.integer "next_elec"
-    t.string "api_uri"
+    t.string "title"
     t.string "twitter"
     t.string "facebook"
     t.string "district"
@@ -60,8 +59,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_155753) do
     t.integer "bills_cosponsored"
     t.float "missed_votes_pct"
     t.float "votes_with_party_pct"
-    t.integer "cspan_id"
-    t.integer "bioguide_id"
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
