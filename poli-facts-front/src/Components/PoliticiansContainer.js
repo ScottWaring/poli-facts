@@ -7,12 +7,11 @@ class PoliticiansContainer extends React.Component {
     
     render(){
         return (
-            <div className="five wide column">
+            <div className="six wide column">
                 <h2 className="ui header">Politicians</h2>
                 <div className= "ui cards">
-                    <PoliticianCard />
-                    <PoliticianCard />
-                    <PoliticianCard />
+                    <PoliticianIcon />
+                    <PoliticianIcon />
                 </div>
                 
             </div>

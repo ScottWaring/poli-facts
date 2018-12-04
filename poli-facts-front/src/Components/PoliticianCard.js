@@ -4,7 +4,11 @@ class PoliticianCard extends React.Component {
     
     render(){
         return (
-            <div className="ui red card">
+            <div className="ui red segment">
+
+            <div className="ui small image centered spaced">
+                <img src="https://theunitedstates.io/images/congress/225x275/R000570.jpg"/>
+            </div>
                 <div class='content'>
                     <div class='header'>Rep Name</div>
                     <div class='meta'>
