@@ -2368,8 +2368,6 @@ def make_state_tables()
     }
     Governor.create(govHash)}
     end
-
-
 end
 
 
