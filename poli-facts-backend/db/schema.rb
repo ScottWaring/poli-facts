@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_155753) do
+ActiveRecord::Schema.define(version: 2018_12_05_165552) do
 
   create_table "data_fetches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(version: 2018_12_04_155753) do
     t.integer "poverty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "high_school_grad"
+    t.float "bachelor_deg"
+    t.float "white"
+    t.float "black"
+    t.float "hispanic"
+    t.float "asian"
+    t.float "native_indian_alaska"
+    t.float "two_plus_race"
+    t.float "unaccounted_race"
   end
 
 end

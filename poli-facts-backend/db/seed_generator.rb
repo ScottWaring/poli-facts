@@ -2377,6 +2377,7 @@ def make_state_tables()
   response = RestClient.get(url)
   returnData = JSON.parse(response)
   returnData.each do |state|
+    @true_name = state[0]
     @name = state[0].downcase.split(" ").join("_")
     @check_name = state[0].downcase
     @census_id = state[1]
@@ -2400,9 +2401,13 @@ def make_state_tables()
         @poverty = x["poverty_level"]
       end
     end
+    @new_json
+
+
     newState = StateTable.create(name: @name, abbrv: @abbrv, census_id: @census_id, poverty: @poverty)
     gov = @gov_array.select {|gov| gov[:state_code] == newState.abbrv }
    
+    ##find and create governors
     if gov.length > 0
       govHash = {
         "state_table_id" => newState.id,
