@@ -29,9 +29,8 @@ class Landing extends Component {
     axios.get(`http://localhost:3000/find_by/${input}`)
     .then(response => {
       console.log(response.data)
-      this.setState({info: response.data, displayFacts: true})
+      this.setState({info: response.data, displayFacts: true, facts: []})
     })
-    // .catch(r => alert("Bad Value Please Reenter Search Input"))
   }
 
   handleSubmit =(e)=> {
@@ -45,13 +44,12 @@ class Landing extends Component {
 
   mapHandler = (event) => {
     let state = event.target.dataset.name
-    console.log(state)
     this.callFetch(state)
   };
 
   clickHandler = (event) => {
     this.setState({
-      facts: event 
+      facts: event
     })
   }
 
@@ -77,7 +75,7 @@ class Landing extends Component {
 
 
         <br/> <br/>
-        
+
          <div>
 
       <form className="ui input" onSubmit={this.handleSubmit}>
@@ -99,10 +97,10 @@ class Landing extends Component {
             <div className='ui divider'/>
             <h2 className="ui header">Governor</h2>
             <div className= "ui centered cards"id ="gov">
-                <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>     
+                <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>
             </div>
             <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor} clickHandler={this.clickHandler}/>
-            
+
           </div>
           :null
         }
