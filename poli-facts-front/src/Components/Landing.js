@@ -5,6 +5,7 @@ import houseicon from '../imgs/house-icon.png'
 import axios from 'axios';
 import USAMap from "react-usa-map";
 import GovernorIcon from './GovernorIcon'
+<<<<<<< HEAD
 import $ from 'jquery';
 import Footer from './Footer'
 window.jQuery = $;
@@ -12,6 +13,10 @@ window.$ = $;
 global.jQuery = $;
 
 
+=======
+import ScrollableAnchor from 'react-scrollable-anchor'
+import { goToAnchor } from 'react-scrollable-anchor'
+>>>>>>> af9f4615d68b59abb5fda57dc99b9a900b018de9
 
 
 class Landing extends Component {
@@ -31,6 +36,7 @@ class Landing extends Component {
     .then(response => {
       console.log(response.data)
       this.setState({info: response.data, displayFacts: true, facts: []})
+      goToAnchor('state', false)
     })
   }
 
@@ -46,6 +52,7 @@ class Landing extends Component {
   mapHandler = (event) => {
     let state = event.target.dataset.name
     this.callFetch(state)
+
   };
 
   clickHandler = (event) => {
@@ -66,9 +73,11 @@ class Landing extends Component {
           <br/>
             <i aria-hidden='true' id="arrow" class='grey angle double down big link icon bounce centered'/>
           </a>
-    
+
+
         </div>
         <br/> <br/>
+    <ScrollableAnchor id={"divider"}>
      <div>
         <form className="ui input" onSubmit={this.handleSubmit}>
           <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Click On The Map"/>
@@ -77,23 +86,26 @@ class Landing extends Component {
         <USAMap onClick={this.mapHandler} />
         <div className="ui container"></div>
       </div>
+      </ScrollableAnchor>
+
         {this.state.displayFacts ?
           <div className="ui container fade-in" id="section2">
-            <FactsContainer state={this.state.info.state.name} info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
             <a href="#divider"><button class="ui left floated button" id="sticky">Back to Map</button></a>
+            <ScrollableAnchor id={"state"}>
+            <div/>
+            </ScrollableAnchor>
+            <FactsContainer state={this.state.info.state.name} info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
             <div className='ui divider'/>
               {this.state.info.governor && <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>}
               <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor} clickHandler={this.clickHandler}/>
             </div>
           :null
         }
-        <div id="footer-div">
-          <Footer />
-        </div>
+
+      <div id="footer-div">
+        <Footer />
+      </div>
     </div>
-
-
-
 
     )
   }
