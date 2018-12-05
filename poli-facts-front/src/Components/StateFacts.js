@@ -3,11 +3,11 @@ import React from 'react'
 
 
 class FactsCard extends React.Component {
-    
+
     render(){
         return (
-            <div className="ui piled segment">
-                
+            <div >
+
             </div>
         )
     }

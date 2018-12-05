@@ -6,6 +6,7 @@ import axios from 'axios';
 import USAMap from "react-usa-map";
 import GovernorIcon from './GovernorIcon'
 import $ from 'jquery';
+import Footer from './Footer'
 window.jQuery = $;
 window.$ = $;
 global.jQuery = $;
@@ -58,54 +59,37 @@ class Landing extends Component {
     return (
 
       <div className="ui container fade-in">
-
         <h1 className="ui huge header" id="topHeader">PoliFacts </h1>
-
         <div id="icon-cont">
-          {/* <svg height="100" width="100">
-            <circle cx="50" cy="50" r="40" />
-          </svg> */}
           <img src={houseicon} id="icon" className ="ui medium centered image" alt="political icon"/><br/><br/>
           <a href="#divider">
           <br/>
-            <i aria-hidden='true' id="arrow" class='grey angle double down big link icon bounce'/>
+            <i aria-hidden='true' id="arrow" class='grey angle double down big link icon bounce centered'/>
           </a>
-          <a name="divider"/>
+    
         </div>
-
-
         <br/> <br/>
-
      <div>
-
         <form className="ui input" onSubmit={this.handleSubmit}>
           <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Click On The Map"/>
           <button>Search</button>
         </form>
         <USAMap onClick={this.mapHandler} />
-
-
         <div className="ui container"></div>
-
       </div>
-
         {this.state.displayFacts ?
           <div className="ui container fade-in" id="section2">
-            <a href="#divider"><button class="ui left floated button" id="sticky">Back to Map</button></a>
-            <div/>
             <FactsContainer state={this.state.info.state.name} info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
+            <a href="#divider"><button class="ui left floated button" id="sticky">Back to Map</button></a>
             <div className='ui divider'/>
-            <h2 className="ui header">Governor</h2>
-            <div className= "ui centered cards"id ="gov">
-                <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>
+              {this.state.info.governor && <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>}
+              <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor} clickHandler={this.clickHandler}/>
             </div>
-            <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor} clickHandler={this.clickHandler}/>
-
-          </div>
           :null
         }
-
-
+        <div id="footer-div">
+          <Footer />
+        </div>
     </div>
 
 

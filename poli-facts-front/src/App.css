@@ -29,7 +29,76 @@ path:hover {
   opacity: 0.50;
   cursor: pointer;
 }
+.links-bar {
+  width: 100%;
+  float: left;
+}
 
+.link-link {
+  width: 10%;
+  float: right;
+  margin-right: .5em;
+}
+#footer-id{
+  width: 15%;
+  float: left;
+}
+
+#footer-div {
+  height: 5%;
+  padding-top: 2em;
+  margin-top: 2em;
+}
+
+
+
+#icons {
+  width: 92%;
+  margin: 4%;
+  /* border-style:solid; */
+}
+ #icons-1 i{
+   float: left;
+   /* border-style:dotted; */
+   width: 10%;
+   margin-left: 27%;
+ }
+
+#icons-1 a{
+  float: left;
+  width: 25%;
+  /* border-style: solid; */
+}
+
+#icons-2 {
+  float: left;
+  /* border-style: dashed; */
+  width:100%;
+}
+
+ #icons-3 i{
+   margin-top: 1em;
+   width: 20%;
+ }
+
+.second-column {
+  align-content:  center;
+}
+
+ #icons-3 {
+   width: 70%;
+   margin-right: 20%;
+   margin-left: 17%;
+   padding-right: 3%;
+ }
+
+ #gov-div {
+   margin-bottom: 2em;
+ }
+
+#gov-div h2 {
+  margin-right: 10%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
