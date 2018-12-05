@@ -17,8 +17,16 @@
   }
 } */
 
+path {
+  color: yellow;
+}
+
 #padding {
   padding: 12px;
+}
+
+#gov {
+  padding-bottom: 2em;
 }
 
 .fade-in {
@@ -37,6 +45,17 @@
 		opacity: 1;
 	}
 }
+
+#icon {
+  opacity: .85;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
 
 .bounce {
 	-moz-animation: bounce 3s infinite;

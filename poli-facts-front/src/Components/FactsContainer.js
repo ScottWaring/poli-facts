@@ -11,6 +11,7 @@ class FactsContainer extends React.Component {
 
                 <h2 className="ui header">Key Facts</h2>
                 <div className="ui piled segment">
+                    {'state' in this.props ? "state":"poli"}
                     {console.log(this.props)}
 
                    

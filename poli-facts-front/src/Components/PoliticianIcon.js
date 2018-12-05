@@ -4,7 +4,7 @@ class PoliticiansIcon extends React.Component {
     
     render(){
         return (
-            <div className={this.props.party=== "Republican" ? "ui red card" : "ui blue card"} onClick={() => this.props.clickHandler(this.props)} >
+            <a href="#" className={this.props.party=== "Republican" ? "ui red card" : "ui blue card"} onClick={() => this.props.clickHandler(this.props)} >
             <div className="ui small image centered spaced" id="padding">
                 <img src={this.props.img_url} alt="politician"/>
             </div>
@@ -15,7 +15,7 @@ class PoliticiansIcon extends React.Component {
                     </div>
                     <div class='description'>{this.props.title}</div>
                 </div>
-            </div>
+            </a>
         )
     }
 }
