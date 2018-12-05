@@ -11,27 +11,24 @@ class PoliticianFacts extends React.Component {
         let timesUrl = `https://www.nytimes.com/search?query=${last}%252C+${first}`
         let pol_phone = `tel:1-${p.phone}`
         let party = p["party"].charAt(0).toUpperCase() + p["party"].slice(1)
+        let website = 	`https://${last}.house.gov`
         return (
-            <div className="ui red segment">
-            <ScrollableAnchor id={"politician-facts"}>
-            <div class="ui left floated button">Back</div>
-            <div className="ui small image centered spaced">
-                {p.img_url ? <img src={p.img_url}/> : <img src={p.photo_url}/>}
-            </div>
-              <div class='header' id="facts-header">{p.name} <br /> {party}</div>
-              <div className={party === "Republican" ? "ui red segment" : "ui blue segment"}>
-                <div class='ui content divided two column grid'>
+          <div className={party === "Republican" ? "ui red segment" : "ui blue segment"}>
 
-                    <div className="column">
-                      <div className="ui medium image centered spaced">
-                          {p.img_url ? <img src={p.img_url}/> : <img src={p.photo_url}/>}
+                <div class='ui content divided two column grid'>
+                    <ScrollableAnchor id={"politician-facts"}>
+                      <div className="column">
+                        <div className="ui medium image centered ">
+                            {p.img_url ? <img className="poli-img" src={p.img_url}/> : <img src={p.photo_url}/>}
+                        </div>
+
+                        <h3>{p.name}</h3> <br />
+                        {party}
+                        <p>{p.title}</p>
+                        {p.district && <p>District: {p.district} </p> }
+
                       </div>
-                      <div className='header' id="facts-header"><h3>{p.name}</h3> <br /> {party}</div>
-                      <div className='meta'>
-                          <p>{p.title}</p>
-                          {p.district && <p>District: {p.district} </p> }
-                      </div>
-                    </div>
+                    </ScrollableAnchor>
                     <div className='description column'>
                       <div className="second-column">
                           {p.bio && <div><h4> Bio: </h4>{p.bio} </div>} <br />
@@ -42,14 +39,14 @@ class PoliticianFacts extends React.Component {
                           {p.missed_votes_pct ? <p><h4>Missed Votes: </h4>{p.missed_votes_pct}%</p> : null}
                           <br/><br/>
                           <p><h4> Address </h4></p>
-                          {p.address ?<p>{p.address}</p> : <p>{p.office_address}, Washington, DC</p>}
+                          {p.address && p.address !== null ?<p>{p.address}</p> : <p>{p.office_address}, Washington, DC</p>}
                           <div id="icons">
                             <div id="icons-1">
-                              <i aria-hidden="true" className="grey phone large link icon"/><a href={pol_phone}>{p.phone}</a><br /><br />
+                            <i aria-hidden="true" className="grey phone large link icon"/><a href={pol_phone}>{p.phone}</a><br /><br />
                               <i aria-hidden="true" class="grey newspaper outline large link icon"/><a href={timesUrl} target="_blank">In the news</a>
                             </div>
                             <br/>
-                            {p.website && <div id="icons-2"><a href={p.website}>Website </a></div> }
+                            {p.website? <div id="icons-2"><a href={p.website} target="_blank">Website </a></div> : <div id="icons-2"><a href={website} target="_blank">Website </a></div>}
                             <div id="icons-3">
                               <a href={p.bio? p.facebook : `https://www.facebook.com/${p.facebook}`}  target="_blank"><i aria-hidden="true" class="blue facebook large link icon"/></a>
                               <a href={p.twitter_handle? `https://www.twitter.com/${p.twitter_handle}`:`https://www.twitter.com/${p.twitter}`} target="_blank"><i aria-hidden="true" class="teal twitter square large link icon" /></a>
@@ -58,11 +55,9 @@ class PoliticianFacts extends React.Component {
                           </div>
                         </div>
                     </div>
-
-
+                  </div>
                 </div>
-                </ScrollableAnchor>
-            </div>
+
         )
     }
   }

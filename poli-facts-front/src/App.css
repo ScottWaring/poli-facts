@@ -96,9 +96,10 @@ path:hover {
    margin-bottom: 2em;
  }
 
-#gov-div h2 {
-  margin-right: 10%;
+.poli-img {
+  margin-left: 17%;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

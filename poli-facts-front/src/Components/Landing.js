@@ -5,18 +5,11 @@ import houseicon from '../imgs/house-icon.png'
 import axios from 'axios';
 import USAMap from "react-usa-map";
 import GovernorIcon from './GovernorIcon'
-<<<<<<< HEAD
 import $ from 'jquery';
 import Footer from './Footer'
-window.jQuery = $;
-window.$ = $;
-global.jQuery = $;
-
-
-=======
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { goToAnchor } from 'react-scrollable-anchor'
->>>>>>> af9f4615d68b59abb5fda57dc99b9a900b018de9
+
 
 
 class Landing extends Component {
@@ -71,6 +64,7 @@ class Landing extends Component {
           <img src={houseicon} id="icon" className ="ui medium centered image" alt="political icon"/><br/><br/>
           <a href="#divider">
           <br/>
+          <h3>Click On A State</h3>  <br/ >
             <i aria-hidden='true' id="arrow" class='grey angle double down big link icon bounce centered'/>
           </a>
 
@@ -79,10 +73,7 @@ class Landing extends Component {
         <br/> <br/>
     <ScrollableAnchor id={"divider"}>
      <div>
-        <form className="ui input" onSubmit={this.handleSubmit}>
-          <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Click On The Map"/>
-          <button>Search</button>
-        </form>
+
         <USAMap onClick={this.mapHandler} />
         <div className="ui container"></div>
       </div>
