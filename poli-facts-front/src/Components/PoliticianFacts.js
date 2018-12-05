@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 class PoliticianFacts extends React.Component {
 
@@ -12,6 +13,7 @@ class PoliticianFacts extends React.Component {
         let party = p["party"].charAt(0).toUpperCase() + p["party"].slice(1)
         return (
             <div className="ui red segment">
+            <ScrollableAnchor id={"politician-facts"}>
             {console.log(p)}
             <div class="ui left floated button">Back</div>
             <div className="ui small image centered spaced">
@@ -46,6 +48,7 @@ class PoliticianFacts extends React.Component {
                     </div>
                     {p.bio && <div className="column">Bio: {p.bio} </div>}
                 </div>
+                </ScrollableAnchor>
             </div>
         )
     }
