@@ -76,22 +76,22 @@ class Landing extends Component {
 
         <br/> <br/>
 
-         <div>
+     <div>
 
-      <form className="ui input" onSubmit={this.handleSubmit}>
-        <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Click On The Map"/>
-        <button>Search</button>
-      </form>
-      <USAMap onClick={this.mapHandler} />
+        <form className="ui input" onSubmit={this.handleSubmit}>
+          <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Click On The Map"/>
+          <button>Search</button>
+        </form>
+        <USAMap onClick={this.mapHandler} />
 
 
-      <div className="ui container"></div>
+        <div className="ui container"></div>
 
       </div>
 
         {this.state.displayFacts ?
           <div className="ui container fade-in" id="section2">
-            <button class="ui left floated button sticky">Back to Map</button>
+            <a href="#divider"><button class="ui left floated button" id="sticky">Back to Map</button></a>
             <div/>
             <FactsContainer state={this.state.info.state.name} info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
             <div className='ui divider'/>
