@@ -2340,7 +2340,7 @@ def createPoliticians(pol, newStateId)
     when "D"
       party = "Democrat"
     else
-      party = "Unaffiliated"
+      party = "Independent"
   end
 
   poliHash = {
