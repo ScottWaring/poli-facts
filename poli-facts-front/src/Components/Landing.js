@@ -79,7 +79,7 @@ class Landing extends Component {
          <div>
 
       <form className="ui input" onSubmit={this.handleSubmit}>
-        <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Zip"/>
+        <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Click On The Map"/>
         <button>Search</button>
       </form>
       <USAMap onClick={this.mapHandler} />
@@ -93,7 +93,7 @@ class Landing extends Component {
           <div className="ui container fade-in" id="section2">
             <button class="ui left floated button sticky">Back to Map</button>
             <div/>
-            <FactsContainer info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
+            <FactsContainer state={this.state.info.state.name} info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
             <div className='ui divider'/>
             <h2 className="ui header">Governor</h2>
             <div className= "ui centered cards"id ="gov">
