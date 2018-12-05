@@ -5,8 +5,11 @@ import houseicon from '../imgs/house-icon.png'
 import axios from 'axios';
 import USAMap from "react-usa-map";
 import GovernorIcon from './GovernorIcon'
+import $ from 'jquery';
+import Footer from './Footer'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { goToAnchor } from 'react-scrollable-anchor'
+
 
 
 class Landing extends Component {
@@ -42,7 +45,7 @@ class Landing extends Component {
   mapHandler = (event) => {
     let state = event.target.dataset.name
     this.callFetch(state)
-    
+
   };
 
   clickHandler = (event) => {
@@ -56,36 +59,23 @@ class Landing extends Component {
     return (
 
       <div className="ui container fade-in">
-
         <h1 className="ui huge header" id="topHeader">PoliFacts </h1>
-
         <div id="icon-cont">
-          {/* <svg height="100" width="100">
-            <circle cx="50" cy="50" r="40" />
-          </svg> */}
           <img src={houseicon} id="icon" className ="ui medium centered image" alt="political icon"/><br/><br/>
           <a href="#divider">
           <br/>
-            <i aria-hidden='true' id="arrow" class='grey angle double down big link icon bounce'/>
+          <h3>Click On A State</h3>  <br/ >
+            <i aria-hidden='true' id="arrow" class='grey angle double down big link icon bounce centered'/>
           </a>
-        
-          
+
+
         </div>
-
-
         <br/> <br/>
     <ScrollableAnchor id={"divider"}>
      <div>
 
-        <form className="ui input" onSubmit={this.handleSubmit}>
-          <input onChange={this.changeHandler} name="search" value={this.state.searchInput} placeholder="Search By State Or Click On The Map"/>
-          <button>Search</button>
-        </form>
         <USAMap onClick={this.mapHandler} />
-
-
         <div className="ui container"></div>
-
       </div>
       </ScrollableAnchor>
 
@@ -96,20 +86,16 @@ class Landing extends Component {
             <div/>
             </ScrollableAnchor>
             <FactsContainer state={this.state.info.state.name} info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
-           
-              <div className='ui divider'/>
-            
-              <h2 className="ui header">Governor</h2>
-              <div className= "ui centered cards"id ="gov">
-                  <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>
-              </div>
-            
-            <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor} clickHandler={this.clickHandler}/>
-
-          </div>
+            <div className='ui divider'/>
+              {this.state.info.governor && <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>}
+              <PoliticiansContainer politicians={this.state.info.politicians} governor={this.state.info.governor} clickHandler={this.clickHandler}/>
+            </div>
           :null
         }
 
+      <div id="footer-div">
+        <Footer />
+      </div>
     </div>
 
     )

@@ -21,7 +21,7 @@ class FactsContainer extends React.Component {
             <div name="politician-facts" >
             {console.log(this.props)}
                 <h2 className="ui header">{stateName}</h2>
-                <div className="ui placeholder segment">
+                <div className="ui segment" >
                     {this.props.info.abbrv ? <StateFacts state={this.props.info}/> : <PoliticianFacts pol={this.props.info}/>}
                 </div>
 
@@ -31,3 +31,4 @@ class FactsContainer extends React.Component {
 }
 
 export default FactsContainer
+//
