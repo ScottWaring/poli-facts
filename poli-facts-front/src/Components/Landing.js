@@ -93,6 +93,8 @@ class Landing extends Component {
 
         {this.state.displayFacts ?
           <div className="ui container fade-in" id="section2">
+            <button class="ui left floated button sticky">Back to Map</button>
+            <div/>
             <FactsContainer info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
             <div className='ui divider'/>
             <h2 className="ui header">Governor</h2>
