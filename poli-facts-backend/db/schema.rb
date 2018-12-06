@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_165552) do
     t.float "native_indian_alaska"
     t.float "two_plus_race"
     t.float "unaccounted_race"
+    t.string "income"
   end
 
 end
