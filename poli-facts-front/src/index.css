@@ -17,6 +17,11 @@
   }
 } */
 
+#pie {
+  max-width: 11em;
+  float: right;
+}
+
 button#sticky {
   position: -webkit-sticky;
   position: sticky;
