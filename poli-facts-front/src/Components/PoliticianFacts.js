@@ -13,11 +13,11 @@ class PoliticianFacts extends React.Component {
         let party = p["party"].charAt(0).toUpperCase() + p["party"].slice(1)
         let website = 	`https://${last}.house.gov`
         return (
-
+        <ScrollableAnchor id={"politician-facts"}>
           <div className={party === "Republican" ? "ui red segment" : "ui blue segment"}>
 
                 <div class='ui content divided two column grid'>
-                    <ScrollableAnchor id={"politician-facts"}>
+                    
                       <div className="column">
                         <div className="ui medium image centered ">
                             {p.img_url ? <img className="poli-img" src={p.img_url}/> : <img src={p.photo_url}/>}
@@ -28,7 +28,7 @@ class PoliticianFacts extends React.Component {
                         {p.district && <p>District: {p.district} </p> }
 
                       </div>
-                    </ScrollableAnchor>
+                    
                     <div className='description column'>
                       <div className="second-column">
                           {p.bio && <div><h4> Bio: </h4>{p.bio} </div>} <br />
@@ -57,6 +57,7 @@ class PoliticianFacts extends React.Component {
                     </div>
                   </div>
                 </div>
+                </ScrollableAnchor>
         )
     }
   }

@@ -16,10 +16,29 @@
     stroke-dashoffset: 0;
   }
 } */
-
+#header-sec-2 {
+  margin-right: 5em;
+}
 #pie {
   max-width: 20em;
   margin: 0 auto;
+}
+
+#top-row {
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+#middle-row {
+  margin-bottom: 2em;
+}
+
+#left-of-row{
+  margin-right: 3em;
+}
+
+#right-of-row{
+  margin-left: 3em;
 }
 
 button#sticky {

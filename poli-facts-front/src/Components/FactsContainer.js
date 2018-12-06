@@ -19,9 +19,8 @@ class FactsContainer extends React.Component {
         stateName = newFirst
       }
         return (
-            <div name="politician-facts" >
-            {console.log(this.props)}
-                <h2 className="ui header">{stateName}</h2>
+            <div >
+                <h1 id="header-sec-2"className="ui header">{stateName}</h1>
                 <div className="ui placeholder segment" >
                     {this.props.info.abbrv ? <StateFacts state={this.props.info}/> : <PoliticianFacts pol={this.props.info}/>}
                 </div>
