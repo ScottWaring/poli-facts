@@ -57,7 +57,6 @@ class PoliticianFacts extends React.Component {
                     </div>
                   </div>
                 </div>
-
         )
     }
   }
