@@ -24,6 +24,7 @@
 
 path {
   pointer-events: all;
+  color: red;
 }
 path:hover {
   opacity: 0.50;

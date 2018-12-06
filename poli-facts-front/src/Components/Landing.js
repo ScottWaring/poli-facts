@@ -17,6 +17,7 @@ class Landing extends Component {
     searchInput: "",
     info: [],
     displayFacts: false,
+    selectedState: "",
     facts: []
   }
 
@@ -54,6 +55,10 @@ class Landing extends Component {
     })
   }
 
+  hoverHandler = (event) => {
+    console.log(event.target.dataset.name)
+  }
+
 
   render() {
     return (
@@ -73,8 +78,9 @@ class Landing extends Component {
         <br/> <br/>
     <ScrollableAnchor id={"divider"}>
       <div>
-
-        <USAMap onClick={this.mapHandler} />
+        {}
+        <USAMap onClick={this.mapHandler} onPointerEnter={this.hoverHandler}/>
+        <br /><br /> <br />
         <div className="ui container"></div>
       </div>
       </ScrollableAnchor>
