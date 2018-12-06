@@ -4,6 +4,7 @@ import PieChart from 'react-minimal-pie-chart';
 
 class FactsCard extends React.Component {
 
+<<<<<<< HEAD
     state = {
         race: {}
     }
@@ -24,7 +25,6 @@ class FactsCard extends React.Component {
                     <div className="ui statistic">
                         <div className="label">Median Income</div>
                         <div className="value">{state.income} </div>
-                     
                     </div>
                     <div className="ui statistic">
                         <div className="label">Living in Poverty</div>
@@ -38,6 +38,7 @@ class FactsCard extends React.Component {
                         </div>
                         <div className="label">High school grads</div>
                     </div>
+
                     <div className="ui statistic">
                         <div className="value">
                             <i aria-hidden='true' class='graduation grey small icon' />{state.bachelor_deg}%
@@ -62,6 +63,12 @@ class FactsCard extends React.Component {
                         />
                 </div>
 		</div>
+=======
+                    <div className="label">Bachelor's degrees</div>
+
+            <div >
+
+>>>>>>> e5cad57ea5bc71805b92f7b8f75ca21c05d35a84
 
             </div>
         )
