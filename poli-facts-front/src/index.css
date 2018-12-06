@@ -18,8 +18,8 @@
 } */
 
 #pie {
-  max-width: 11em;
-  float: right;
+  max-width: 20em;
+  margin: 0 auto;
 }
 
 button#sticky {

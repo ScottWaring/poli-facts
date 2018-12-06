@@ -19,8 +19,8 @@ class FactsCard extends React.Component {
     render(){
         let state = this.props.state 
         return (
-            <div>
-                <div className="ui small statistics" >
+            <div className="ui two column grid divided">
+                <div className="ui small statistics eight wide column" >
                     <div className="ui statistic">
                         <div className="label">Median Income</div>
                         <div className="value">{state.income} </div>
@@ -45,9 +45,9 @@ class FactsCard extends React.Component {
                         <div className="label">Bachelor's degrees</div>
                     </div>
                 </div>
-                <div>
+                <div className = "column">
                 <div id= "pie">
-                    <p>{this.state.race.value * 100}% {this.state.race.title}</p>
+                    <h3>{this.state.race.value * 100}% {this.state.race.title}</h3>
                     <PieChart
                         data={[
                         { title: 'White', value: state.white, color: '#5F5AA2' },
@@ -56,7 +56,7 @@ class FactsCard extends React.Component {
                         { title: 'Asian', value: state.asian, color: '#b59da4' },
                         { title: 'American Indian/Alaska Native', value: state.native_indian_alaska, color: '#DBE9EE' },
                         { title: 'Two or More Races', value: state.two_plus_race, color: '#30292F' },
-                        { title: 'Unaccounted', value: state.unaccounted_race, color: '#3F4045' }
+                        { title: 'Unaccounted / Error', value: state.unaccounted_race, color: '#3F4045' }
                         ]}
                         onMouseOver = {(event, data, dataIndex) => this.hoverHandler(event, data, dataIndex)}
                         />
