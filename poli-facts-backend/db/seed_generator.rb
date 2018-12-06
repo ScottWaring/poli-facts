@@ -1,72 +1,5 @@
 StateTable.destroy_all
 Governor.destroy_all
-#   @states_arr = [{'Alabama'=>'AL'},{'Alaska'=>'AK'},{'Arizona'=>'AZ'},{'Arkansas'=>'AR'},
-#   {'California'=>'CA'},{'Colorado'=>'CO'},{'Connecticut'=>'CT'},{'Delaware'=>'DE'},{'Florida'=>'FL'},
-#   {'Georgia'=>'GA'},{'Hawaii'=>'HI'},{'Idaho'=>'ID'},{'Illinois'=>'IL'},
-#   {'Indiana'=>'IN'},{'Iowa'=>'IA'},{'Kansas'=>'KS'},{'Kentucky'=>'KY'},
-#   {'Louisiana'=>'LA'},{'Maine'=>'ME'},{'Maryland'=>'MD'}, {'Massachusetts'=>'MA'},
-#   {'Michigan'=>'MI'},{'Minnesota'=>'MN'},{'Mississippi'=>'MS'},{'Missouri'=>'MO'},
-#   {'Montana'=>'MT'},{'Nebraska'=>'NE'},{'Nevada'=>'NV'},{'New Hampshire'=>'NH'},
-#   {'New Jersey'=>'NJ'},{'New Mexico'=>'NM'},{'New York'=>'NY'},{'North Carolina'=>'NC'},{'North Dakota'=>'ND'},
-#   {'Ohio'=>'OH'},{'Oklahoma'=>'OK'},{'Oregon'=>'OR'},{'Pennsylvania'=>'PA'},
-#   {'Rhode Island'=>'RI'},{'South Carolina'=>'SC'},{'South Dakota'=>'SD'},
-#   {'Tennessee'=>'TN'},{'Texas'=>'TX'},{'Utah'=>'UT'},{'Vermont'=>'VT'},
-#   {'Virginia'=>'VA'},{'Washington'=>'WA'},{'West Virginia'=>'WV'},{'Wisconsin'=>'WI'},
-#   {'Wyoming'=>'WY'}]
-#   @poverty_table = [{"state_id"=> "","state_name"=> "United States","poverty_level"=> 15.1},
-#  {"state_id"=> 1,"state_name"=> "Alabama","poverty_level"=> 18.4},
-#  {"state_id"=> 2,"state_name"=> "Alaska","poverty_level"=> 10.1},
-#  {"state_id"=> 4,"state_name"=> "Arizona","poverty_level"=> 17.7},
-#  {"state_id"=> 5,"state_name"=> "Arkansas","poverty_level"=> 18.8},
-#  {"state_id"=> 6,"state_name"=> "California","poverty_level"=> 15.8},
-#  {"state_id"=> 8,"state_name"=> "Colorado","poverty_level"=> 12.2},
-#  {"state_id"=> 9,"state_name"=> "Connecticut","poverty_level"=> 10.4},
-#  {"state_id"=> 10,"state_name"=> "Delaware","poverty_level"=> 12},
-#  {"state_id"=> 11,"state_name"=> "District of Columbia","poverty_level"=> 17.9},
-#  {"state_id"=> 12,"state_name"=> "Florida","poverty_level"=> 16.1},
-#  {"state_id"=> 13,"state_name"=> "Georgia","poverty_level"=> 17.8},
-#  {"state_id"=> 15,"state_name"=> "Hawaii","poverty_level"=> 10.8},
-#  {"state_id"=> 16,"state_name"=> "Idaho","poverty_level"=> 15.2},
-#  {"state_id"=> 17,"state_name"=> "Illinois","poverty_level"=> 14},
-#  {"state_id"=> 18,"state_name"=> "Indiana","poverty_level"=> 15},
-#  {"state_id"=> 19,"state_name"=> "Iowa","poverty_level"=> 12.3},
-#  {"state_id"=> 20,"state_name"=> "Kansas","poverty_level"=> 13.3},
-#  {"state_id"=> 21,"state_name"=> "Kentucky","poverty_level"=> 18.8},
-#  {"state_id"=> 22,"state_name"=> "Louisiana","poverty_level"=> 19.7},
-#  {"state_id"=> 23,"state_name"=> "Maine","poverty_level"=> 13.5},
-#  {"state_id"=> 24,"state_name"=> "Maryland","poverty_level"=> 9.9},
-#  {"state_id"=> 25,"state_name"=> "Massachusetts","poverty_level"=> 11.4},
-#  {"state_id"=> 26,"state_name"=> "Michigan","poverty_level"=> 16.3},
-#  {"state_id"=> 27,"state_name"=> "Minnesota","poverty_level"=> 10.8},
-#  {"state_id"=> 28,"state_name"=> "Mississippi","poverty_level"=> 22.3},
-#  {"state_id"=> 29,"state_name"=> "Missouri","poverty_level"=> 15.3},
-#  {"state_id"=> 30,"state_name"=> "Montana","poverty_level"=> 14.9},
-#  {"state_id"=> 31,"state_name"=> "Nebraska","poverty_level"=> 12.4},
-#  {"state_id"=> 32,"state_name"=> "Nevada","poverty_level"=> 14.9},
-#  {"state_id"=> 33,"state_name"=> "New Hampshire","poverty_level"=> 8.5},
-#  {"state_id"=> 34,"state_name"=> "New Jersey","poverty_level"=> 10.9},
-#  {"state_id"=> 35,"state_name"=> "New Mexico","poverty_level"=> 20.9},
-#  {"state_id"=> 36,"state_name"=> "New York","poverty_level"=> 15.5},
-#  {"state_id"=> 37,"state_name"=> "North Carolina","poverty_level"=> 16.8},
-#  {"state_id"=> 38,"state_name"=> "North Dakota","poverty_level"=> 11.2},
-#  {"state_id"=> 39,"state_name"=> "Ohio","poverty_level"=> 15.4},
-#  {"state_id"=> 40,"state_name"=> "Oklahoma","poverty_level"=> 16.5},
-#  {"state_id"=> 41,"state_name"=> "Oregon","poverty_level"=> 15.7},
-#  {"state_id"=> 42,"state_name"=> "Pennsylvania","poverty_level"=> 13.3},
-#  {"state_id"=> 44,"state_name"=> "Rhode Island","poverty_level"=> 13.8},
-#  {"state_id"=> 45,"state_name"=> "South Carolina","poverty_level"=> 17.2},
-#  {"state_id"=> 46,"state_name"=> "South Dakota","poverty_level"=> 14},
-#  {"state_id"=> 47,"state_name"=> "Tennessee","poverty_level"=> 17.2},
-#  {"state_id"=> 48,"state_name"=> "Texas","poverty_level"=> 16.7},
-#  {"state_id"=> 49,"state_name"=> "Utah","poverty_level"=> 11.7},
-#  {"state_id"=> 50,"state_name"=> "Vermont","poverty_level"=> 11.6},
-#  {"state_id"=> 51,"state_name"=> "Virginia","poverty_level"=> 11.4},
-#  {"state_id"=> 53,"state_name"=> "Washington","poverty_level"=> 12.7},
-#  {"state_id"=> 54,"state_name"=> "West Virginia","poverty_level"=> 17.7},
-#  {"state_id"=> 55,"state_name"=> "Wisconsin","poverty_level"=> 12.7},
-#  {"state_id"=> 56,"state_name"=> "Wyoming","poverty_level"=> 11.6},
-#  {"state_id"=> 72,"state_name"=> "Puerto Rico","poverty_level"=> 45.1}
-# ]
 
 @states_array = [
   {
@@ -83,7 +16,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$44,758"
   },
   {
     "state_id": 2,
@@ -99,7 +33,8 @@ Governor.destroy_all
     "native": 0.07,
     "two_races": 0.09,
     "Race Percent Total": 1,
-    "unaccounted": 1.11022e-16
+    "unaccounted": 1.11e-16,
+    "income": "$74,444"
   },
   {
     "state_id": 4,
@@ -115,7 +50,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": -2.22045e-16
+    "unaccounted": -2.22e-16,
+    "income": "$51,340"
   },
   {
     "state_id": 5,
@@ -131,7 +67,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.03,
     "Race Percent Total": 1.01,
-    "unaccounted": -0.01
+    "unaccounted": -0.01,
+    "income": "$42,336"
   },
   {
     "state_id": 6,
@@ -147,7 +84,8 @@ Governor.destroy_all
     "native": 0.14,
     "two_races": 0.03,
     "Race Percent Total": 0.98,
-    "unaccounted": 0.02
+    "unaccounted": 0.02,
+    "income": "$63,783"
   },
   {
     "state_id": 8,
@@ -163,7 +101,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$62,520"
   },
   {
     "state_id": 9,
@@ -179,7 +118,8 @@ Governor.destroy_all
     "native": 0.05,
     "two_races": 0.03,
     "Race Percent Total": 1.01,
-    "unaccounted": -0.01
+    "unaccounted": -0.01,
+    "income": "$71,755"
   },
   {
     "state_id": 10,
@@ -195,7 +135,8 @@ Governor.destroy_all
     "native": 0.04,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$61,017"
   },
   {
     "state_id": 11,
@@ -211,7 +152,8 @@ Governor.destroy_all
     "native": 0.04,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$72,935"
   },
   {
     "state_id": 12,
@@ -227,7 +169,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.02,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$48,900"
   },
   {
     "state_id": 13,
@@ -243,7 +186,8 @@ Governor.destroy_all
     "native": 0.04,
     "two_races": 0.02,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$51,037"
   },
   {
     "state_id": 15,
@@ -259,7 +203,8 @@ Governor.destroy_all
     "native": 0.38,
     "two_races": 0.2,
     "Race Percent Total": 0.89,
-    "unaccounted": 0.11
+    "unaccounted": 0.11,
+    "income": "$71,977"
   },
   {
     "state_id": 16,
@@ -275,7 +220,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.03,
     "Race Percent Total": 0.97,
-    "unaccounted": 0.03
+    "unaccounted": 0.03,
+    "income": "$49,174"
   },
   {
     "state_id": 17,
@@ -291,7 +237,8 @@ Governor.destroy_all
     "native": 0.05,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$59,196"
   },
   {
     "state_id": 18,
@@ -307,7 +254,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$50,433"
   },
   {
     "state_id": 19,
@@ -323,7 +271,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.02,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$54,570"
   },
   {
     "state_id": 20,
@@ -339,7 +288,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.03,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$53,571"
   },
   {
     "state_id": 21,
@@ -355,7 +305,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.02,
     "Race Percent Total": 0.98,
-    "unaccounted": 0.02
+    "unaccounted": 0.02,
+    "income": "$44,811"
   },
   {
     "state_id": 22,
@@ -371,7 +322,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.02,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$45,652"
   },
   {
     "state_id": 23,
@@ -387,7 +339,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.02,
     "Race Percent Total": 0.98,
-    "unaccounted": 0.02
+    "unaccounted": 0.02,
+    "income": "$50,826"
   },
   {
     "state_id": 24,
@@ -403,7 +356,8 @@ Governor.destroy_all
     "native": 0.07,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$76,067"
   },
   {
     "state_id": 25,
@@ -419,7 +373,8 @@ Governor.destroy_all
     "native": 0.06,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$70,954"
   },
   {
     "state_id": 26,
@@ -435,7 +390,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$50,803"
   },
   {
     "state_id": 27,
@@ -451,7 +407,8 @@ Governor.destroy_all
     "native": 0.05,
     "two_races": 0.03,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$63,217"
   },
   {
     "state_id": 28,
@@ -467,7 +424,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0,
     "Race Percent Total": 0.98,
-    "unaccounted": 0.02
+    "unaccounted": 0.02,
+    "income": "$40,528"
   },
   {
     "state_id": 29,
@@ -483,7 +441,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$49,593"
   },
   {
     "state_id": 30,
@@ -499,7 +458,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$48,380"
   },
   {
     "state_id": 31,
@@ -515,7 +475,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$54,384"
   },
   {
     "state_id": 32,
@@ -531,7 +492,8 @@ Governor.destroy_all
     "native": 0.08,
     "two_races": 0.04,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$53,094"
   },
   {
     "state_id": 33,
@@ -547,7 +509,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.02,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$68,485"
   },
   {
     "state_id": 34,
@@ -563,7 +526,8 @@ Governor.destroy_all
     "native": 0.1,
     "two_races": 0.02,
     "Race Percent Total": 1.01,
-    "unaccounted": -0.01
+    "unaccounted": -0.01,
+    "income": "$73,702"
   },
   {
     "state_id": 35,
@@ -579,7 +543,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$45,674"
   },
   {
     "state_id": 36,
@@ -595,7 +560,8 @@ Governor.destroy_all
     "native": 0.09,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$60,741"
   },
   {
     "state_id": 37,
@@ -611,7 +577,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.03,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$48,256"
   },
   {
     "state_id": 38,
@@ -627,7 +594,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.02,
     "Race Percent Total": 1.01,
-    "unaccounted": -0.01
+    "unaccounted": -0.01,
+    "income": "$59,114"
   },
   {
     "state_id": 39,
@@ -643,7 +611,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$50,674"
   },
   {
     "state_id": 40,
@@ -659,7 +628,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.07,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$48,038"
   },
   {
     "state_id": 41,
@@ -675,7 +645,8 @@ Governor.destroy_all
     "native": 0.05,
     "two_races": 0.04,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$53,270"
   },
   {
     "state_id": 42,
@@ -691,7 +662,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.02,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$54,895"
   },
   {
     "state_id": 44,
@@ -707,7 +679,8 @@ Governor.destroy_all
     "native": 0.04,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$58,387"
   },
   {
     "state_id": 45,
@@ -723,7 +696,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.02,
     "Race Percent Total": 1.01,
-    "unaccounted": -0.01
+    "unaccounted": -0.01,
+    "income": "$46,898"
   },
   {
     "state_id": 46,
@@ -739,7 +713,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$52,078"
   },
   {
     "state_id": 47,
@@ -755,7 +730,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$46,574"
   },
   {
     "state_id": 48,
@@ -771,7 +747,8 @@ Governor.destroy_all
     "native": 0.05,
     "two_races": 0.02,
     "Race Percent Total": 1.01,
-    "unaccounted": -0.01
+    "unaccounted": -0.01,
+    "income": "$54,727"
   },
   {
     "state_id": 49,
@@ -787,7 +764,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.02,
     "Race Percent Total": 0.97,
-    "unaccounted": 0.03
+    "unaccounted": 0.03,
+    "income": "$62,518"
   },
   {
     "state_id": 50,
@@ -803,7 +781,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$56,104"
   },
   {
     "state_id": 51,
@@ -819,7 +798,8 @@ Governor.destroy_all
     "native": 0.07,
     "two_races": 0.03,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$66,149"
   },
   {
     "state_id": 53,
@@ -835,7 +815,8 @@ Governor.destroy_all
     "native": 0.09,
     "two_races": 0.05,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$62,848"
   },
   {
     "state_id": 54,
@@ -851,7 +832,8 @@ Governor.destroy_all
     "native": 0,
     "two_races": 0.02,
     "Race Percent Total": 0.99,
-    "unaccounted": 0.01
+    "unaccounted": 0.01,
+    "income": "$42,644"
   },
   {
     "state_id": 55,
@@ -867,7 +849,8 @@ Governor.destroy_all
     "native": 0.03,
     "two_races": 0.02,
     "Race Percent Total": 1,
-    "unaccounted": 0
+    "unaccounted": 0,
+    "income": "$54,610"
   },
   {
     "state_id": 56,
@@ -883,455 +866,8 @@ Governor.destroy_all
     "native": 0.02,
     "two_races": 11.14,
     "Race Percent Total": -10.14,
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": 0.84,
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "Source: U.S. Census Bureau, American Community Survey, 2010 1-Year Estimates, Table S. 1501",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
-  },
-  {
-    "state_id": "",
-    "abbrv": "",
-    "state_name": "",
-    "high_school": "",
-    "bach_degree": "",
-    "Poverty": "",
-    "White": "",
-    "Black": "",
-    "Hispanic": "",
-    "Asian": "",
-    "native": "",
-    "two_races": "",
-    "Race Percent Total": "",
-    "unaccounted": ""
+    "unaccounted": "",
+    "income": "$59,143"
   }
 ]
 
@@ -3686,7 +3222,8 @@ def make_state_tables()
       asian: state[:Asian],
       native_indian_alaska: state[:native],
       two_plus_race: state[:two_races],
-      unaccounted_race: state[:unaccounted]
+      unaccounted_race: state[:unaccounted],
+      income: state[:income]
     }  
 
     newState = StateTable.create(stateHash)

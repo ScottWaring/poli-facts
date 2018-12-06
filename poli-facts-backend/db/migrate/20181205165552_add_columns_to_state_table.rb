@@ -9,5 +9,6 @@ class AddColumnsToStateTable < ActiveRecord::Migration[5.2]
     add_column :state_tables, :native_indian_alaska, :float
     add_column :state_tables, :two_plus_race, :float
     add_column :state_tables, :unaccounted_race, :float
+    add_column :state_tables, :income, :string
   end
 end

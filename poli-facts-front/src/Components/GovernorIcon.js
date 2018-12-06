@@ -5,6 +5,7 @@ class GovernorIcon extends React.Component {
     render(){
         let partyName = this.props.party.charAt(0).toUpperCase() + this.props.party.slice(1);
         return (
+        
         <div id="gov-div">
           <h2 className="ui header">Governor</h2>
             <a href="#politician-facts" className={partyName=== "Republican" ? "ui red card centered" : "ui blue card centered"} onClick={() => this.props.clickHandler(this.props)}>

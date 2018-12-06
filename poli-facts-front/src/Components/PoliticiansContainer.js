@@ -13,7 +13,6 @@ class PoliticiansContainer extends React.Component {
         return (
             <div >
 
-
                 <h2 className="ui header">Elected Officials</h2>
                 <div className= "ui centered cards">
                     {poliList}
