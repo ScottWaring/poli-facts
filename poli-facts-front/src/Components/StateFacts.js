@@ -4,7 +4,7 @@ import PieChart from 'react-minimal-pie-chart';
 
 class FactsCard extends React.Component {
 
-<<<<<<< HEAD
+
     state = {
         race: {}
     }
@@ -63,12 +63,7 @@ class FactsCard extends React.Component {
                         />
                 </div>
 		</div>
-=======
-                    <div className="label">Bachelor's degrees</div>
 
-            <div >
-
->>>>>>> e5cad57ea5bc71805b92f7b8f75ca21c05d35a84
 
             </div>
         )

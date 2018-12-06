@@ -14,8 +14,6 @@ class PoliticianFacts extends React.Component {
         let website = 	`https://${last}.house.gov`
         return (
 
-           
-  
           <div className={party === "Republican" ? "ui red segment" : "ui blue segment"}>
 
                 <div class='ui content divided two column grid'>
@@ -59,9 +57,6 @@ class PoliticianFacts extends React.Component {
                     </div>
                   </div>
                 </div>
-
-               
-            </div>
 
         )
     }
