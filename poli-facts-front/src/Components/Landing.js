@@ -72,7 +72,7 @@ class Landing extends Component {
         </div>
         <br/> <br/>
     <ScrollableAnchor id={"divider"}>
-     <div>
+      <div>
 
         <USAMap onClick={this.mapHandler} />
         <div className="ui container"></div>
