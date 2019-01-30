@@ -17,7 +17,8 @@ class Landing extends Component {
     info: [],
     displayFacts: false,
     selectedState: "",
-    facts: []
+    facts: [],
+    stateName: ""
   }
 
   changeHandler =(e)=> {
@@ -57,7 +58,9 @@ class Landing extends Component {
   hoverHandler = (event) => {
     let selectState = event.target.dataset.name
     if (selectState !== undefined) {
-      console.log(selectState)
+      this.setState({
+        stateName: selectState
+      })
     }
   
   }
@@ -81,7 +84,7 @@ class Landing extends Component {
         <br/> <br/>
     <ScrollableAnchor id={"divider"}>
       <div onMouseOver={this.hoverHandler}>
-        <USAMap onClick={this.mapHandler} onPointerOver={this.hoverHandler}/>
+        <USAMap title={this.state.stateName} onClick={this.mapHandler} onPointerOver={this.hoverHandler}/>
         <br /><br /> <br />
         <div className="ui container"></div>
       </div>
