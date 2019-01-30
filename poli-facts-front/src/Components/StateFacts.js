@@ -16,9 +16,9 @@ class FactsCard extends React.Component {
             race: data[dataIndex]
         })
     }
-    
+
     render(){
-        let state = this.props.state 
+        let state = this.props.state
         return (
            
            
@@ -28,11 +28,11 @@ class FactsCard extends React.Component {
                     <div className="ui statistic">
                         <div className="label">Median Income</div>
                         <div className="value">
-                            <i aria-hidden='true' class='money bill alternate grey small icon' />{state.income} 
-                        </div> 
+                            <i aria-hidden='true' class='money bill alternate grey small icon' />{state.income}
+                        </div>
                     </div>
                 </div>
-                
+
                 <div className="row" id= "middle-row">
                     <div className="ui statistic" id="left-of-row">
                         <div className="value">
@@ -47,7 +47,7 @@ class FactsCard extends React.Component {
                         <div className="label">Bachelor's degrees</div>
                     </div>
                 </div>
-               
+
                 <div className="row">
                     <div className="ui statistic">
                         <div className="label">Living in Poverty</div>
@@ -56,8 +56,8 @@ class FactsCard extends React.Component {
                         </div>
                     </div>
                 </div>
-                
-               
+
+
                 </div>
                 <div className = "column">
                 <div id= "pie">

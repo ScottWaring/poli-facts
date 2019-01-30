@@ -3,7 +3,7 @@ class SearchController < ApplicationController
 
 
   def show
-    # GOOGLE_API = "AIzaSyDmvAw4zMq7CKQoqrE4zRHfIdOW40hIPAA"
+    
     if params[:query].length === 2
       state = StateTable.find_by(abbrv: params[:query])
     else

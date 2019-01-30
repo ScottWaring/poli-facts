@@ -15,7 +15,6 @@ class PoliticianFacts extends React.Component {
         return (
         <ScrollableAnchor id={"politician-facts"}>
           <div className={party === "Republican" ? "ui red segment" : "ui blue segment"}>
-
                 <div class='ui content divided two column grid'>
                     
                       <div className="column">
@@ -25,8 +24,7 @@ class PoliticianFacts extends React.Component {
                         <h3>{p.name}</h3> <br />
                         {party}
                         <p>{p.title}</p>
-                        {p.district && <p>District: {p.district} </p> }
-
+                        {p.district && <p>District: {p.district}</p> }
                       </div>
                     
                     <div className='description column'>

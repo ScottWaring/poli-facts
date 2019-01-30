@@ -24,7 +24,7 @@ class FactsContainer extends React.Component {
                 <div className="ui placeholder segment" >
                     {this.props.info.abbrv ? <StateFacts state={this.props.info}/> : <PoliticianFacts pol={this.props.info}/>}
                 </div>
-            
+
             </div>
         )
     }
