@@ -1,4 +1,5 @@
 import React from 'react'
+import Popup from 'reactjs-popup'
 
 class PoliticiansIcon extends React.Component {
 
@@ -16,6 +17,7 @@ class PoliticiansIcon extends React.Component {
                     </div>
                     <div class='description'>{this.props.title}</div>
                 </div>
+             
             </a>
         )
     }

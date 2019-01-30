@@ -1,6 +1,7 @@
 // handles logic for whether to access facts for a state or a zipcode
 import React from 'react'
 import PieChart from 'react-minimal-pie-chart';
+import Popup from 'reactjs-popup'
 
 class FactsCard extends React.Component {
 
@@ -10,8 +11,7 @@ class FactsCard extends React.Component {
     }
 
     hoverHandler = (event, data, dataIndex) => {
-        console.log(data)
-        console.log(dataIndex)
+       
         this.setState({
             race: data[dataIndex]
         })
@@ -20,6 +20,8 @@ class FactsCard extends React.Component {
     render(){
         let state = this.props.state 
         return (
+           
+           
             <div className="ui two column padded grid divided">
                 <div className="ui small statistics eight wide column" >
                 <div className="row" id="top-row">
@@ -76,8 +78,8 @@ class FactsCard extends React.Component {
                 </div>
 		</div>
 
-
-            </div>
+</div>
+            
         )
     }
 }

@@ -5,9 +5,9 @@ class SearchController < ApplicationController
   def show
     # GOOGLE_API = "AIzaSyDmvAw4zMq7CKQoqrE4zRHfIdOW40hIPAA"
     if params[:query].length === 2
-      state = StateTable.find_by(abbrv:params[:query])
+      state = StateTable.find_by(abbrv: params[:query])
     else
-      state = StateTable.find_by(name:params[:query])
+      state = StateTable.find_by(name: params[:query])
     end
 
     # googleElections = RestClient.get("https://www.googleapis.com/civicinfo/v1/representatives?/ocd-division/country:us/state:#{state.abbrv.downcase}/&key=AIzaSyDmvAw4zMq7CKQoqrE4zRHfIdOW40hIPAA")

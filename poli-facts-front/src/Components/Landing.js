@@ -5,7 +5,6 @@ import houseicon from '../imgs/house-icon.png'
 import axios from 'axios';
 import USAMap from "react-usa-map";
 import GovernorIcon from './GovernorIcon'
-import $ from 'jquery';
 import Footer from './Footer'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { goToAnchor } from 'react-scrollable-anchor'
@@ -56,7 +55,11 @@ class Landing extends Component {
   }
 
   hoverHandler = (event) => {
-    console.log(event.target.dataset.name)
+    let selectState = event.target.dataset.name
+    if (selectState !== undefined) {
+      console.log(selectState)
+    }
+  
   }
 
 
@@ -77,9 +80,8 @@ class Landing extends Component {
         </div>
         <br/> <br/>
     <ScrollableAnchor id={"divider"}>
-      <div>
-        {}
-        <USAMap onClick={this.mapHandler} onPointerEnter={this.hoverHandler}/>
+      <div onMouseOver={this.hoverHandler}>
+        <USAMap onClick={this.mapHandler} onPointerOver={this.hoverHandler}/>
         <br /><br /> <br />
         <div className="ui container"></div>
       </div>
@@ -87,10 +89,11 @@ class Landing extends Component {
 
         {this.state.displayFacts ?
           <div className="ui container fade-in" id="section2">
-            <a href="#divider"><button class="ui left floated button" id="sticky">Back to Map</button></a>
-            <ScrollableAnchor id={"state"}>
-            <div/>
+           <ScrollableAnchor id={"state"}>
+              <a href="#divider"><button class="ui left floated button" id="sticky">Back to Map</button></a>
             </ScrollableAnchor>
+            <div/>
+            
             <FactsContainer state={this.state.info.state.name} info={this.state.facts.length === 0 ? this.state.info.state : this.state.facts} /><br/>
             <div className='ui divider'/>
               {this.state.info.governor && <GovernorIcon {...this.state.info.governor} clickHandler={this.clickHandler}/>}
